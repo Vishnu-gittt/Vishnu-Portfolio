@@ -1,112 +1,123 @@
-Vishnu Varthan N — Personal Portfolio
+<div align="center">
 
-Data Science | Artificial Intelligence | Machine Learning | Full-Stack Development
+VISHNU VARTHAN N
 
-Welcome to my personal portfolio repository!
+DATA SCIENCE • ARTIFICIAL INTELLIGENCE • SOFTWARE DEVELOPMENT
 
-I’m Vishnu Varthan N, a Data Science student passionate about Artificial Intelligence, Machine Learning, data analytics and building intelligent applications.
+Transforming Data into Intelligence. Building Ideas into Reality.
 
-This portfolio showcases my technical skills, projects, professional experience and journey in technology.
+<p>
+  <a href="YOUR_PORTFOLIO_URL">
+    <img src="https://img.shields.io/badge/PORTFOLIO-Visit%20Website-111111?style=for-the-badge&logo=vercel&logoColor=white" />
+  </a>
+  <a href="YOUR_LINKEDIN_URL">
+    <img src="https://img.shields.io/badge/LINKEDIN-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
+  </a>
+  <a href="https://github.com/Vishnu-gittt">
+    <img src="https://img.shields.io/badge/GITHUB-Follow-181717?style=for-the-badge&logo=github&logoColor=white" />
+  </a>
+</p>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:111111,100:434343&height=3" width="100%" />
+</div>
 
-⸻
+👨‍💻 About Me
 
-🌐 Portfolio Preview
+Hello! I’m Vishnu Varthan N, a Data Science student with a strong interest in Artificial Intelligence, Machine Learning, Data Analytics and intelligent software development.
 
-A modern, minimal and interactive portfolio designed to present my work, technical expertise and projects.
+I enjoy exploring how technology can solve real-world problems, transforming raw data into meaningful insights and developing applications powered by AI.
 
-Portfolio Sections:
+My focus is on combining analytical thinking, engineering and creativity to build practical technology solutions.
 
-* About Me
-* Featured Projects
-* Technical Skills
-* Experience
-* Resume
-* Contact
-
-⸻
-
-🚀 Tech Stack
-
-Technology	Purpose
-Next.js	Frontend framework
-React.js	UI development
-TypeScript	Type-safe development
-Tailwind CSS	Styling and responsive design
-Framer Motion	Animations and interactions
-Lucide React	Icons
-
-⸻
-
-💻 Featured Projects
-
-1. HealthMate AI
-
-An intelligent personal health information platform designed to organise medical records, interpret health reports and provide AI-powered health information assistance.
-
-Technologies: Next.js, Python, FastAPI, PostgreSQL, Gemini API, RAG.
-
-2. VishFit AI
-
-An intelligent personal fitness and sports nutrition platform focused on personalised fitness assistance and nutrition insights.
-
-3. AI Resume Screener
-
-An AI-powered candidate assessment system designed to analyse resumes and support semantic matching between candidate profiles and job requirements.
-
-4. DataByte Forum
-
-A collaborative discussion and voting platform with real-time interactions and administrative capabilities.
-
-5. Business Performance Dashboard
-
-A Power BI dashboard designed to visualise business performance indicators and support data-driven decision-making.
+* 🎓 B.Sc. Data Science
+* 🤖 Exploring Artificial Intelligence & Generative AI
+* 📊 Interested in Data Analytics and Machine Learning
+* ⚡ Building AI-powered applications and automation workflows
+* 🌱 Continuously learning, experimenting and building.
 
 ⸻
 
-🛠️ Technical Skills
+🧠 Technical Arsenal
+
+<div align="center">
 
 Programming Languages
 
-* Python
-* SQL
-* R
-* JavaScript
-* TypeScript
+<img src="https://skillicons.dev/icons?i=python,js,ts,r" />
 
-Data Science & Analytics
+Frontend Development
 
-* Pandas
-* NumPy
-* Matplotlib
-* Power BI
-* Microsoft Excel
-* Statistical Analysis
+<img src="https://skillicons.dev/icons?i=html,css,react,nextjs,tailwind" />
 
-AI & Machine Learning
+AI, Data Science & Analytics
 
-* Machine Learning
-* Generative AI
-* Retrieval-Augmented Generation (RAG)
-* Prompt Engineering
-* LLM Integration
+<img src="https://skillicons.dev/icons?i=tensorflow,pytorch" />
 
-Web Development
+Databases & Developer Tools
 
-* Next.js
-* React.js
-* HTML
-* CSS
-* Tailwind CSS
-* FastAPI
+<img src="https://skillicons.dev/icons?i=mysql,postgres,git,github,vscode,docker" />
+</div>
 
-Databases & Tools
+⸻
 
-* MySQL
-* PostgreSQL
-* Git
-* GitHub
-* Jupyter Notebook
-* Google Colab
+🚀 Featured Projects
+
+01 — HealthMate AI
+
+Intelligent Personal Health Information Platform
+
+An AI-powered health information platform designed to organise medical records, analyse laboratory reports, retrieve personal health information and support better-informed conversations with healthcare professionals.
+
+Next.js FastAPI PostgreSQL Gemini API RAG
+
+02 — VishFit AI
+
+AI-Powered Fitness & Nutrition Assistant
+
+An intelligent fitness and nutrition platform focused on personalised workout guidance, nutrition insights and AI-assisted fitness experiences.
+
+Python AI Automation PostgreSQL
+
+03 — AI Resume Screener
+
+Intelligent Candidate Assessment Pipeline
+
+An AI-powered system designed to analyse candidate resumes and support semantic matching between candidate profiles and job requirements.
+
+Python NLP Machine Learning LLMs
+
+04 — DataByte Forum
+
+Collaborative Discussion & Voting Platform
+
+A web-based platform featuring discussions, voting functionality, authentication and real-time administrative updates.
+
+React Node.js Express MongoDB Socket.IO
+
+05 — Business Performance Dashboard
+
+Data-Driven Business Intelligence
+
+An interactive Power BI dashboard designed to visualise business performance indicators and communicate actionable insights.
+
+Power BI Excel Data Analytics
+
+⸻
+
+⚙️ My Development Workflow
+
+IDEA
+  ↓
+RESEARCH & PROBLEM UNDERSTANDING
+  ↓
+DATA COLLECTION & ANALYSIS
+  ↓
+DESIGN & ARCHITECTURE
+  ↓
+DEVELOPMENT & AI INTEGRATION
+  ↓
+TESTING & OPTIMISATION
+  ↓
+DEPLOYMENT
 
 ⸻
 
@@ -120,52 +131,41 @@ D.G. Vaishnav College, Chennai, India.
 
 📄 Resume
 
-My latest resume is available here:
+<div align="center">
 
-View / Download Resume
+Interested in my background and experience?
 
-⸻
-
-⚙️ Run Locally
-
-Clone the repository:
-
-git clone https://github.com/Vishnu-gittt/Vishnu-Portfolio.git
-
-Navigate to the project directory:
-
-cd Vishnu-Portfolio
-
-Install dependencies:
-
-npm install
-
-Start the development server:
-
-npm run dev
-
-Open your browser:
-
-http://localhost:3000
+<a href="./public/Vishnu%20Varthan%20N%20-%20Resume.pdf">
+  <img src="https://img.shields.io/badge/VIEW_MY_RESUME-Download%20PDF-111111?style=for-the-badge&logo=adobeacrobatreader&logoColor=white" />
+</a>
+</div>
 
 ⸻
 
-📬 Connect With Me
+📈 GitHub Activity
 
-I’m interested in opportunities involving Data Science, Artificial Intelligence, Machine Learning and software development.
-
-* GitHub: Vishnu-gittt
-* LinkedIn: Add your LinkedIn profile URL
-* Email: Add your professional email address
+<div align="center">
+<img src="https://github-readme-stats.vercel.app/api?username=Vishnu-gittt&show_icons=true&theme=transparent&hide_border=true&title_color=2563EB&icon_color=2563EB&text_color=64748B" height="165" />
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Vishnu-gittt&layout=compact&theme=transparent&hide_border=true&title_color=2563EB&text_color=64748B" height="165" />
+<img src="https://streak-stats.demolab.com?user=Vishnu-gittt&theme=transparent&hide_border=true&ring=2563EB&fire=2563EB&currStreakLabel=2563EB" width="70%" />
+</div>
 
 ⸻
 
-⭐ Support
+🤝 Let’s Connect
 
-If you find my projects interesting, feel free to explore the repositories and connect with me.
+<div align="center">
 
-Thanks for visiting my portfolio!
+Open to learning, collaboration and opportunities in Data Science & AI.
 
-Vishnu Varthan N
+<a href="YOUR_LINKEDIN_URL">
+  <img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin" />
+</a>
+<a href="https://github.com/Vishnu-gittt">
+  <img src="https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github" />
+</a>
 
 Exploring Data. Building Intelligence. Creating Impact.
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:111111,100:434343&height=100&section=footer" width="100%" />
+</div>
