@@ -7,10 +7,10 @@ DATA SCIENCE • ARTIFICIAL INTELLIGENCE • SOFTWARE DEVELOPMENT
 Transforming Data into Intelligence. Building Ideas into Reality.
 
 <p>
-  <a href="YOUR_PORTFOLIO_URL">
-    <img src="https://img.shields.io/badge/PORTFOLIO-Visit%20Website-111111?style=for-the-badge&logo=vercel&logoColor=white" />
+  <a href="https://vishnuportfolio-lake.vercel.app">
+    <img src="https://img.shields.io/badge/PORTFOLIO-Explore%20My%20Work-111111?style=for-the-badge&logo=vercel&logoColor=white" />
   </a>
-  <a href="YOUR_LINKEDIN_URL">
+  <a href="https://www.linkedin.com/in/vishnu-varthan-n-310840309/">
     <img src="https://img.shields.io/badge/LINKEDIN-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
   </a>
   <a href="https://github.com/Vishnu-gittt">
@@ -22,19 +22,17 @@ Transforming Data into Intelligence. Building Ideas into Reality.
 
 👨‍💻 About Me
 
-Hello! I’m Vishnu Varthan N, a Data Science student with a strong interest in Artificial Intelligence, Machine Learning, Data Analytics and intelligent software development.
+I’m Vishnu Varthan N, a Data Science student passionate about Artificial Intelligence, Machine Learning, Data Analytics and intelligent software development.
 
-I enjoy exploring how technology can solve real-world problems, transforming raw data into meaningful insights and developing applications powered by AI.
+I enjoy transforming raw data into meaningful insights and building practical applications powered by AI.
 
-My focus is on combining analytical thinking, engineering and creativity to build practical technology solutions.
+My goal is to combine analytical thinking, engineering and creativity to develop technology that solves real-world problems.
 
-* 🎓 B.Sc. Data Science
-* 🤖 Exploring Artificial Intelligence & Generative AI
-* 📊 Interested in Data Analytics and Machine Learning
-* ⚡ Building AI-powered applications and automation workflows
+* 🎓 B.Sc. Data Science — D.G. Vaishnav College, Chennai.
+* 🤖 Exploring Artificial Intelligence and Generative AI.
+* 📊 Interested in Data Analytics and Machine Learning.
+* ⚡ Building AI-powered applications and automation workflows.
 * 🌱 Continuously learning, experimenting and building.
-
-⸻
 
 🧠 Technical Arsenal
 
@@ -48,7 +46,7 @@ Frontend Development
 
 <img src="https://skillicons.dev/icons?i=html,css,react,nextjs,tailwind" />
 
-AI, Data Science & Analytics
+AI, Machine Learning & Data Science
 
 <img src="https://skillicons.dev/icons?i=tensorflow,pytorch" />
 
@@ -57,11 +55,9 @@ Databases & Developer Tools
 <img src="https://skillicons.dev/icons?i=mysql,postgres,git,github,vscode,docker" />
 </div>
 
-⸻
-
 🚀 Featured Projects
 
-01 — HealthMate AI
+01. HealthMate AI
 
 Intelligent Personal Health Information Platform
 
@@ -69,7 +65,7 @@ An AI-powered health information platform designed to organise medical records, 
 
 Next.js FastAPI PostgreSQL Gemini API RAG
 
-02 — VishFit AI
+02. VishFit AI
 
 AI-Powered Fitness & Nutrition Assistant
 
@@ -77,31 +73,29 @@ An intelligent fitness and nutrition platform focused on personalised workout gu
 
 Python AI Automation PostgreSQL
 
-03 — AI Resume Screener
+03. AI Resume Screener
 
 Intelligent Candidate Assessment Pipeline
 
-An AI-powered system designed to analyse candidate resumes and support semantic matching between candidate profiles and job requirements.
+An AI-powered system designed to analyse resumes and support semantic matching between candidate profiles and job requirements.
 
 Python NLP Machine Learning LLMs
 
-04 — DataByte Forum
+04. DataByte Forum
 
 Collaborative Discussion & Voting Platform
 
-A web-based platform featuring discussions, voting functionality, authentication and real-time administrative updates.
+A collaborative web platform featuring discussions, voting functionality, authentication and real-time administrative updates.
 
 React Node.js Express MongoDB Socket.IO
 
-05 — Business Performance Dashboard
+05. Business Performance Dashboard
 
 Data-Driven Business Intelligence
 
 An interactive Power BI dashboard designed to visualise business performance indicators and communicate actionable insights.
 
 Power BI Excel Data Analytics
-
-⸻
 
 ⚙️ My Development Workflow
 
@@ -119,30 +113,21 @@ TESTING & OPTIMISATION
   ↓
 DEPLOYMENT
 
-⸻
-
 🎓 Education
 
 Bachelor of Science — Data Science
 
 D.G. Vaishnav College, Chennai, India.
 
-⸻
-
 📄 Resume
 
 <div align="center">
-
-Interested in my background and experience?
-
-<a href="./public/Vishnu%20Varthan%20N%20-%20Resume.pdf">
+<a href="./Vishnu%20Varthan%20N%20-%20Resume.pdf">
   <img src="https://img.shields.io/badge/VIEW_MY_RESUME-Download%20PDF-111111?style=for-the-badge&logo=adobeacrobatreader&logoColor=white" />
 </a>
 </div>
 
-⸻
-
-📈 GitHub Activity
+📊 GitHub Activity
 
 <div align="center">
 <img src="https://github-readme-stats.vercel.app/api?username=Vishnu-gittt&show_icons=true&theme=transparent&hide_border=true&title_color=2563EB&icon_color=2563EB&text_color=64748B" height="165" />
@@ -150,19 +135,20 @@ Interested in my background and experience?
 <img src="https://streak-stats.demolab.com?user=Vishnu-gittt&theme=transparent&hide_border=true&ring=2563EB&fire=2563EB&currStreakLabel=2563EB" width="70%" />
 </div>
 
-⸻
-
 🤝 Let’s Connect
 
 <div align="center">
 
 Open to learning, collaboration and opportunities in Data Science & AI.
 
-<a href="YOUR_LINKEDIN_URL">
+<a href="https://www.linkedin.com/in/vishnu-varthan-n-310840309/">
   <img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin" />
 </a>
 <a href="https://github.com/Vishnu-gittt">
   <img src="https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github" />
+</a>
+<a href="https://vishnuportfolio-lake.vercel.app">
+  <img src="https://img.shields.io/badge/Portfolio-Visit-111111?style=for-the-badge&logo=vercel" />
 </a>
 
 Exploring Data. Building Intelligence. Creating Impact.
