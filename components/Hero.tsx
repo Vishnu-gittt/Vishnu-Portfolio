@@ -142,7 +142,7 @@ export default function Hero({ onOpenResume }: { onOpenResume: () => void }) {
     <section
       ref={containerRef}
       onMouseMove={handleMouseMove}
-      className="relative min-h-[110vh] pt-28 pb-20 px-6 md:px-12 flex flex-col justify-between overflow-hidden bg-editorial-bg bg-noise border-b border-editorial-border"
+      className="relative min-h-[100svh] sm:min-h-[105vh] md:min-h-[110vh] pt-20 xs:pt-24 sm:pt-28 pb-12 sm:pb-16 md:pb-20 px-4 xs:px-6 md:px-12 flex flex-col justify-between overflow-hidden bg-editorial-bg bg-noise border-b border-editorial-border"
     >
       {/* BACKGROUND LAYER: Small Editorial Labels & Metadata */}
       <div className="max-w-7xl mx-auto w-full flex items-center justify-between z-0">
@@ -150,10 +150,10 @@ export default function Hero({ onOpenResume }: { onOpenResume: () => void }) {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-3 bg-editorial-card/80 border border-editorial-border/70 px-4 py-1.5 backdrop-blur-sm"
+          className="inline-flex items-center gap-2.5 sm:gap-3 bg-editorial-card/80 border border-editorial-border/70 px-3 sm:px-4 py-1.5 backdrop-blur-sm"
         >
-          <span className="w-2 h-2 rounded-full bg-editorial-accent animate-pulse" />
-          <span className="text-xs md:text-sm font-semibold tracking-widest uppercase text-editorial-text/90 font-mono">
+          <span className="w-2 h-2 rounded-full bg-editorial-accent animate-pulse shrink-0" />
+          <span className="text-[10px] xs:text-xs md:text-sm font-semibold tracking-wider sm:tracking-widest uppercase text-editorial-text/90 font-mono">
             DATA SCIENCE × ARTIFICIAL INTELLIGENCE
           </span>
         </motion.div>
@@ -173,7 +173,7 @@ export default function Hero({ onOpenResume }: { onOpenResume: () => void }) {
       {/* CENTERPIECE: MIDDLE TYPOGRAPHY LAYER + FOREGROUND TWO-STAGE SUBJECT */}
       <motion.div
         style={{ opacity: heroOpacity }}
-        className="relative max-w-7xl mx-auto w-full my-6 flex flex-col items-center justify-center min-h-[480px] sm:min-h-[540px] md:min-h-[620px]"
+        className="relative max-w-7xl mx-auto w-full my-3 sm:my-6 flex flex-col items-center justify-center min-h-[320px] xs:min-h-[360px] sm:min-h-[460px] md:min-h-[580px] lg:min-h-[620px]"
       >
         {/* MIDDLE LAYER: Large Bold Typography revealed from Left -> Right in linear sync with walking movement */}
         <motion.div
@@ -190,17 +190,17 @@ export default function Hero({ onOpenResume }: { onOpenResume: () => void }) {
               duration: stage === "walking" ? 2.25 : 0,
               ease: "linear",
             }}
-            className="w-full flex flex-col items-center justify-center gap-3 sm:gap-5 md:gap-6"
+            className="w-full flex flex-col items-center justify-center gap-2 xs:gap-3 sm:gap-5 md:gap-6"
           >
             <h1
               style={{ letterSpacing: "-0.02em" }}
-              className="text-[12vw] sm:text-[11vw] lg:text-[10vw] font-extrabold uppercase leading-none text-editorial-text/90 font-sans text-center"
+              className="text-[13vw] xs:text-[12vw] sm:text-[11vw] lg:text-[10vw] font-extrabold uppercase leading-none text-editorial-text/90 font-sans text-center whitespace-nowrap"
             >
               VISHNU
             </h1>
             <h1
               style={{ letterSpacing: "-0.02em" }}
-              className="text-[12vw] sm:text-[11vw] lg:text-[10vw] font-extrabold uppercase leading-none text-editorial-text/90 font-sans text-center"
+              className="text-[13vw] xs:text-[12vw] sm:text-[11vw] lg:text-[10vw] font-extrabold uppercase leading-none text-editorial-text/90 font-sans text-center whitespace-nowrap"
             >
               VARTHAN N
             </h1>
@@ -208,16 +208,16 @@ export default function Hero({ onOpenResume }: { onOpenResume: () => void }) {
         </motion.div>
 
         {/* FOREGROUND LAYER: Character walks smoothly on fresh top load, or rests standing */}
-        <div className="relative w-full h-[400px] sm:h-[500px] md:h-[580px] flex items-end justify-center z-20 pointer-events-none">
+        <div className="relative w-full h-[280px] xs:h-[330px] sm:h-[440px] md:h-[540px] lg:h-[580px] flex items-end justify-center z-20 pointer-events-none">
           {/* Ambient Glow */}
-          <div className="absolute bottom-6 w-48 h-48 rounded-full bg-editorial-accent/10 blur-3xl pointer-events-none" />
+          <div className="absolute bottom-6 w-36 xs:w-48 h-36 xs:h-48 rounded-full bg-editorial-accent/10 blur-3xl pointer-events-none" />
 
           {/* STAGE 1: WALKING VIDEO PASS (Only rendered when stage is walking on fresh top page load) */}
           {stage === "walking" && (
             <motion.div
-              initial={{ x: "-45vw", opacity: 1 }}
+              initial={{ x: "-40vw", opacity: 1 }}
               animate={{
-                x: "36vw",
+                x: "30vw",
                 opacity: 1,
               }}
               exit={{ opacity: 0 }}
@@ -226,7 +226,7 @@ export default function Hero({ onOpenResume }: { onOpenResume: () => void }) {
                 opacity: { duration: 0.3, ease: "easeInOut" },
               }}
               style={{ willChange: "transform", transform: "translateZ(0)" }}
-              className="absolute bottom-0 w-[240px] sm:w-[320px] md:w-[420px] lg:w-[460px] h-full flex items-end justify-center pointer-events-auto"
+              className="absolute bottom-0 w-[180px] xs:w-[220px] sm:w-[300px] md:w-[400px] lg:w-[460px] h-full flex items-end justify-center pointer-events-auto"
             >
               <img
                 src={`/images/walking_frames/frame_${String(currentFrame).padStart(3, "0")}.webp`}
@@ -236,7 +236,7 @@ export default function Hero({ onOpenResume }: { onOpenResume: () => void }) {
             </motion.div>
           )}
 
-          {/* STAGE 2: DEFAULT STANDING IMAGE (/images/stand.png - navy blazer, white trousers) SETTLED IN CENTER */}
+          {/* STAGE 2: DEFAULT STANDING IMAGE (/images/stand.png) SETTLED IN CENTER */}
           <motion.div
             initial={false}
             animate={{
@@ -247,13 +247,13 @@ export default function Hero({ onOpenResume }: { onOpenResume: () => void }) {
               duration: stage === "standing" ? 0.6 : 0,
               ease: [0.16, 1, 0.3, 1],
             }}
-            className="absolute bottom-0 w-[260px] sm:w-[340px] md:w-[440px] lg:w-[480px] h-full flex items-end justify-center pointer-events-auto"
+            className="absolute bottom-0 w-[190px] xs:w-[230px] sm:w-[320px] md:w-[420px] lg:w-[480px] h-full flex items-end justify-center pointer-events-auto"
           >
             <Image
               src="/images/stand.png"
               alt="Vishnu Varthan N standing image"
               fill
-              sizes="(max-width: 768px) 340px, 480px"
+              sizes="(max-width: 640px) 230px, (max-width: 1024px) 340px, 480px"
               priority
               unoptimized
               className="object-contain object-bottom editorial-photo filter drop-shadow-2xl"
@@ -263,21 +263,21 @@ export default function Hero({ onOpenResume }: { onOpenResume: () => void }) {
       </motion.div>
 
       {/* FOOTER BAR: Role & Bio Text */}
-      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-8 items-end z-30 pt-2">
+      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-8 items-end z-30 pt-2">
         {/* Left Role & Bio */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="md:col-span-7 space-y-3"
+          className="md:col-span-7 space-y-2 sm:space-y-3"
         >
           <div className="inline-flex items-center gap-2">
-            <Sparkles className="w-4 h-4 text-editorial-accent" />
-            <h2 className="text-xs md:text-sm font-bold tracking-widest uppercase text-editorial-accent font-mono">
+            <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-editorial-accent" />
+            <h2 className="text-[11px] xs:text-xs md:text-sm font-bold tracking-widest uppercase text-editorial-accent font-mono">
               DATA SCIENCE & AI DEVELOPER
             </h2>
           </div>
-          <p className="text-xl sm:text-2xl md:text-3xl font-display font-medium text-editorial-text leading-tight max-w-2xl">
+          <p className="text-lg xs:text-xl sm:text-2xl md:text-3xl font-display font-medium text-editorial-text leading-snug sm:leading-tight max-w-2xl">
             I build intelligent applications using machine learning, generative AI, LLMs, RAG and AI automation.
           </p>
         </motion.div>
@@ -287,11 +287,11 @@ export default function Hero({ onOpenResume }: { onOpenResume: () => void }) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="md:col-span-5 flex flex-col sm:flex-row md:flex-col lg:flex-row gap-4 md:justify-end"
+          className="md:col-span-5 flex flex-col xs:flex-row md:flex-col lg:flex-row gap-3 sm:gap-4 md:justify-end w-full"
         >
           <button
             onClick={scrollToProjects}
-            className="inline-flex items-center justify-center gap-3 bg-editorial-text text-editorial-bg hover:bg-editorial-accent px-8 py-4 text-xs font-bold tracking-widest uppercase transition-all duration-300 group shadow-md hover:shadow-xl hover:-translate-y-0.5"
+            className="w-full xs:w-auto inline-flex items-center justify-center gap-2.5 sm:gap-3 bg-editorial-text text-editorial-bg hover:bg-editorial-accent active:bg-editorial-accent px-6 sm:px-8 py-3.5 sm:py-4 text-xs font-bold tracking-widest uppercase transition-all duration-300 group shadow-md hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 min-h-[48px]"
           >
             <span>VIEW PROJECTS</span>
             <ArrowDownRight className="w-4 h-4 group-hover:translate-x-1 group-hover:translate-y-1 transition-transform" />
@@ -300,7 +300,7 @@ export default function Hero({ onOpenResume }: { onOpenResume: () => void }) {
           <a
             href="/Vishnu%20Varthan%20N%20-%20Resume.pdf"
             download="Vishnu Varthan N - Resume.pdf"
-            className="inline-flex items-center justify-center gap-3 bg-transparent text-editorial-text border border-editorial-text hover:bg-editorial-text hover:text-editorial-bg px-8 py-4 text-xs font-bold tracking-widest uppercase transition-all duration-300 group hover:-translate-y-0.5"
+            className="w-full xs:w-auto inline-flex items-center justify-center gap-2.5 sm:gap-3 bg-transparent text-editorial-text border border-editorial-text hover:bg-editorial-text hover:text-editorial-bg active:bg-editorial-text active:text-editorial-bg px-6 sm:px-8 py-3.5 sm:py-4 text-xs font-bold tracking-widest uppercase transition-all duration-300 group hover:-translate-y-0.5 active:translate-y-0 min-h-[48px]"
           >
             <Download className="w-4 h-4" />
             <span>DOWNLOAD RESUME</span>

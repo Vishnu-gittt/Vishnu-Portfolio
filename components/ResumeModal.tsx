@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Download, FileText, Mail, MapPin, Linkedin, Github, ExternalLink } from "lucide-react";
 
@@ -9,11 +10,33 @@ interface ResumeModalProps {
 }
 
 export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
+  // Lock background scrolling while modal is open
+  useEffect(() => {
+    if (isOpen) {
+      const originalOverflow = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.body.style.overflow = originalOverflow;
+      };
+    }
+  }, [isOpen]);
+
+  // Handle Escape key to close modal
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && isOpen) {
+        onClose();
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-10 overflow-y-auto">
+      <div className="fixed inset-0 z-50 flex items-center justify-center p-3 xs:p-4 sm:p-6 md:p-10 overflow-y-auto">
         {/* Backdrop */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -25,24 +48,27 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
 
         {/* Modal Window */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95, y: 20 }}
+          initial={{ opacity: 0, scale: 0.95, y: 15 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.95, y: 20 }}
-          transition={{ type: "spring", damping: 25, stiffness: 300 }}
-          className="relative w-full max-w-4xl bg-editorial-bg border border-editorial-border shadow-2xl z-10 overflow-hidden my-auto max-h-[90vh] flex flex-col"
+          exit={{ opacity: 0, scale: 0.95, y: 15 }}
+          transition={{ type: "spring", damping: 26, stiffness: 320 }}
+          className="relative w-full max-w-4xl bg-editorial-bg border border-editorial-border shadow-2xl z-10 overflow-hidden my-auto max-h-[92vh] flex flex-col"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Vishnu Varthan N Resume"
         >
           {/* Header Bar */}
-          <div className="flex items-center justify-between px-6 py-4 border-b border-editorial-border bg-editorial-card/60 shrink-0">
-            <div className="flex items-center gap-3">
-              <FileText className="w-4 h-4 text-editorial-accent" />
-              <span className="font-mono text-xs font-bold tracking-widest text-editorial-text uppercase">
+          <div className="flex items-center justify-between px-4 sm:px-6 py-3.5 sm:py-4 border-b border-editorial-border bg-editorial-card/60 shrink-0">
+            <div className="flex items-center gap-2 sm:gap-3">
+              <FileText className="w-4 h-4 text-editorial-accent shrink-0" />
+              <span className="font-mono text-[11px] xs:text-xs font-bold tracking-widest text-editorial-text uppercase truncate">
                 VISHNU VARTHAN N — OFFICIAL RESUME
               </span>
             </div>
 
             <button
               onClick={onClose}
-              className="p-1.5 text-editorial-muted hover:text-editorial-text hover:bg-editorial-card transition-colors rounded-sm"
+              className="w-10 h-10 -mr-2 flex items-center justify-center text-editorial-muted hover:text-editorial-text hover:bg-editorial-card transition-colors rounded-sm focus:outline-none"
               aria-label="Close modal"
             >
               <X className="w-5 h-5" />
@@ -50,47 +76,47 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
           </div>
 
           {/* Scrollable Content Container */}
-          <div className="p-6 md:p-8 space-y-8 overflow-y-auto font-sans">
+          <div className="p-4 sm:p-6 md:p-8 space-y-6 sm:space-y-8 overflow-y-auto font-sans">
             {/* Candidate Header Summary */}
-            <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-editorial-border pb-6 gap-4">
+            <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-editorial-border pb-4 sm:pb-6 gap-4">
               <div>
-                <h2 className="text-3xl md:text-4xl font-display font-extrabold uppercase text-editorial-text tracking-tight">
+                <h2 className="text-2xl xs:text-3xl md:text-4xl font-display font-extrabold uppercase text-editorial-text tracking-tight">
                   VISHNU VARTHAN N
                 </h2>
-                <p className="text-sm font-mono font-bold tracking-widest text-editorial-accent uppercase mt-1">
+                <p className="text-xs xs:text-sm font-mono font-bold tracking-widest text-editorial-accent uppercase mt-1">
                   DATA SCIENCE STUDENT & AI DEVELOPER
                 </p>
-                <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-editorial-muted mt-3">
+                <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-xs font-mono text-editorial-muted mt-2.5 sm:mt-3">
                   <span className="flex items-center gap-1.5">
-                    <MapPin className="w-3.5 h-3.5 text-editorial-accent" />
+                    <MapPin className="w-3.5 h-3.5 text-editorial-accent shrink-0" />
                     Chennai, India
                   </span>
                   <a
                     href="https://linkedin.com/in/vishnu-varthan-n-310840309"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 hover:text-editorial-text transition-colors"
+                    className="flex items-center gap-1.5 hover:text-editorial-text transition-colors py-1"
                   >
-                    <Linkedin className="w-3.5 h-3.5 text-editorial-accent" />
+                    <Linkedin className="w-3.5 h-3.5 text-editorial-accent shrink-0" />
                     LinkedIn
                   </a>
                   <a
                     href="https://github.com/Vishnu-gittt"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 hover:text-editorial-text transition-colors"
+                    className="flex items-center gap-1.5 hover:text-editorial-text transition-colors py-1"
                   >
-                    <Github className="w-3.5 h-3.5 text-editorial-accent" />
+                    <Github className="w-3.5 h-3.5 text-editorial-accent shrink-0" />
                     GitHub
                   </a>
                 </div>
               </div>
 
-              <div className="text-left md:text-right">
-                <span className="text-xs font-mono font-bold tracking-wider text-editorial-muted uppercase block">
+              <div className="text-left md:text-right pt-2 md:pt-0 border-t md:border-t-0 border-editorial-border/60">
+                <span className="text-[10px] xs:text-xs font-mono font-bold tracking-wider text-editorial-muted uppercase block">
                   CORE FOCUS
                 </span>
-                <span className="text-sm font-display font-bold text-editorial-text">
+                <span className="text-xs xs:text-sm font-display font-bold text-editorial-text">
                   Machine Learning, Generative AI & Automation
                 </span>
               </div>
@@ -231,21 +257,21 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
             </div>
 
             {/* Footer Actions — Links directly to canonical /Vishnu Varthan N - Resume.pdf */}
-            <div className="pt-6 border-t border-editorial-border flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="pt-4 sm:pt-6 border-t border-editorial-border flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 sm:gap-4">
               <a
                 href="mailto:vishnuvarthan6074@gmail.com"
-                className="text-xs font-bold tracking-widest uppercase text-editorial-text hover:text-editorial-accent transition-colors flex items-center gap-2"
+                className="text-[11px] xs:text-xs font-bold tracking-widest uppercase text-editorial-text hover:text-editorial-accent transition-colors flex items-center gap-2 py-1 truncate"
               >
-                <Mail className="w-4 h-4" />
-                <span>EMAIL: VISHNUVARTHAN6074@GMAIL.COM</span>
+                <Mail className="w-4 h-4 shrink-0" />
+                <span className="truncate">EMAIL: VISHNUVARTHAN6074@GMAIL.COM</span>
               </a>
 
-              <div className="flex flex-wrap items-center gap-3 w-full sm:w-auto">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 w-full sm:w-auto">
                 <a
                   href="/Vishnu%20Varthan%20N%20-%20Resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 bg-editorial-card border border-editorial-border text-editorial-text px-5 py-3.5 text-xs font-bold tracking-widest uppercase hover:bg-editorial-text hover:text-editorial-bg transition-colors shadow-sm"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-editorial-card border border-editorial-border text-editorial-text px-4 sm:px-5 py-3 sm:py-3.5 text-xs font-bold tracking-widest uppercase hover:bg-editorial-text hover:text-editorial-bg transition-colors shadow-sm min-h-[44px]"
                 >
                   <ExternalLink className="w-4 h-4" />
                   <span>VIEW RESUME (PDF)</span>
@@ -254,7 +280,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                 <a
                   href="/Vishnu%20Varthan%20N%20-%20Resume.pdf"
                   download="Vishnu Varthan N - Resume.pdf"
-                  className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 bg-editorial-accent text-white px-6 py-3.5 text-xs font-bold tracking-widest uppercase hover:bg-editorial-accentHover transition-colors shadow-md group"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-editorial-accent text-white px-5 sm:px-6 py-3 sm:py-3.5 text-xs font-bold tracking-widest uppercase hover:bg-editorial-accentHover transition-colors shadow-md group min-h-[44px]"
                 >
                   <Download className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
                   <span>DOWNLOAD RESUME (PDF)</span>

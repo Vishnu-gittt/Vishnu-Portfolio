@@ -131,38 +131,38 @@ export default function SelectedProjects() {
   const [selectedProject, setSelectedProject] = useState<ProjectData | null>(null);
 
   return (
-    <section id="projects" className="py-24 px-6 md:px-12 bg-editorial-bg border-b border-editorial-border">
+    <section id="projects" className="py-16 sm:py-20 md:py-24 px-4 xs:px-6 md:px-12 bg-editorial-bg border-b border-editorial-border">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 border-b border-editorial-border pb-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-16 border-b border-editorial-border pb-4 sm:pb-6">
           <div>
-            <span className="text-xs font-bold tracking-widest uppercase text-editorial-accent block mb-2">
+            <span className="text-[11px] xs:text-xs font-bold tracking-widest uppercase text-editorial-accent block mb-1.5 sm:mb-2">
               02 — WORKS
             </span>
-            <h2 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold uppercase tracking-tight text-editorial-text">
+            <h2 className="text-3xl xs:text-4xl sm:text-6xl md:text-7xl font-display font-bold uppercase tracking-tight text-editorial-text">
               SELECTED<br />PROJECTS
             </h2>
           </div>
-          <p className="text-xs font-mono tracking-widest text-editorial-muted uppercase mt-4 md:mt-0 max-w-xs text-left md:text-right">
+          <p className="text-[11px] xs:text-xs font-mono tracking-widest text-editorial-muted uppercase mt-3 md:mt-0 max-w-xs text-left md:text-right">
             AI SYSTEMS, DATA SCIENCE & WEB ARCHITECTURE
           </p>
         </div>
 
         {/* Project List / Cards Grid */}
-        <div className="space-y-16">
+        <div className="space-y-8 sm:space-y-12 md:space-y-16">
           {projects.map((proj, index) => (
             <motion.div
               key={proj.id}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.7, delay: index * 0.1 }}
-              className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center border border-editorial-border p-6 md:p-8 bg-editorial-bg hover:border-editorial-text transition-all duration-300 group"
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.5, delay: index * 0.08 }}
+              className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 items-center border border-editorial-border p-4 sm:p-6 md:p-8 bg-editorial-bg hover:border-editorial-text transition-all duration-300 group shadow-sm"
             >
               {/* Visual Preview Box */}
               <div
                 onClick={() => setSelectedProject(proj)}
-                className={`lg:col-span-6 h-[260px] sm:h-[320px] md:h-[360px] ${proj.imageBg} border border-editorial-border relative overflow-hidden flex flex-col justify-between p-6 cursor-pointer group-hover:shadow-md transition-all`}
+                className={`lg:col-span-6 h-[220px] xs:h-[260px] sm:h-[320px] md:h-[360px] ${proj.imageBg} border border-editorial-border relative overflow-hidden flex flex-col justify-between p-4 sm:p-6 cursor-pointer group-hover:shadow-md transition-all`}
               >
                 {/* Project Mockup Visual Background */}
                 {proj.imageUrl && (
@@ -179,52 +179,52 @@ export default function SelectedProjects() {
                 )}
 
                 <div className="flex items-center justify-between z-10">
-                  <span className="text-xs font-mono font-bold tracking-widest uppercase bg-editorial-text text-editorial-bg px-3 py-1 shadow-sm">
+                  <span className="text-[10px] xs:text-xs font-mono font-bold tracking-widest uppercase bg-editorial-text text-editorial-bg px-2.5 sm:px-3 py-1 shadow-sm">
                     {proj.category}
                   </span>
-                  <span className="font-display font-bold text-4xl text-white/80 drop-shadow-md group-hover:text-editorial-accent transition-colors">
+                  <span className="font-display font-bold text-3xl sm:text-4xl text-white/80 drop-shadow-md group-hover:text-editorial-accent transition-colors">
                     {proj.number}
                   </span>
                 </div>
 
-                <div className="z-10 bg-editorial-bg/90 backdrop-blur-md p-5 border border-editorial-border/60 transform group-hover:-translate-y-1 transition-transform shadow-lg">
-                  <h3 className="text-2xl md:text-3xl font-display font-bold uppercase text-editorial-text">
+                <div className="z-10 bg-editorial-bg/95 backdrop-blur-md p-3.5 sm:p-5 border border-editorial-border/60 transform group-hover:-translate-y-1 transition-transform shadow-lg">
+                  <h3 className="text-xl xs:text-2xl md:text-3xl font-display font-bold uppercase text-editorial-text">
                     {proj.title}
                   </h3>
-                  <p className="text-xs font-sans text-editorial-muted mt-1 font-medium">
+                  <p className="text-[11px] xs:text-xs font-sans text-editorial-muted mt-0.5 sm:mt-1 font-medium line-clamp-1 sm:line-clamp-none">
                     {proj.subtitle}
                   </p>
                 </div>
               </div>
 
               {/* Text Info */}
-              <div className="lg:col-span-6 space-y-6 flex flex-col justify-between h-full">
+              <div className="lg:col-span-6 space-y-4 sm:space-y-6 flex flex-col justify-between h-full">
                 <div>
-                  <div className="flex items-center gap-3 mb-3">
-                    <span className="font-mono text-sm font-bold text-editorial-accent">
+                  <div className="flex items-center gap-2.5 sm:gap-3 mb-2 sm:mb-3">
+                    <span className="font-mono text-xs sm:text-sm font-bold text-editorial-accent">
                       {proj.number}
                     </span>
-                    <span className="text-xs font-mono tracking-wider uppercase text-editorial-muted">
+                    <span className="text-[11px] xs:text-xs font-mono tracking-wider uppercase text-editorial-muted">
                       / {proj.category}
                     </span>
                   </div>
 
-                  <h3 className="text-2xl md:text-3xl font-display font-bold uppercase text-editorial-text group-hover:text-editorial-accent transition-colors">
+                  <h3 className="text-xl xs:text-2xl md:text-3xl font-display font-bold uppercase text-editorial-text group-hover:text-editorial-accent transition-colors">
                     {proj.title}
                   </h3>
 
-                  <p className="text-sm md:text-base text-editorial-muted mt-3 leading-relaxed font-sans">
+                  <p className="text-xs xs:text-sm md:text-base text-editorial-muted mt-2 sm:mt-3 leading-relaxed font-sans">
                     {proj.description}
                   </p>
                 </div>
 
                 {/* Tech Tags & CTA */}
-                <div className="space-y-6 pt-4 border-t border-editorial-border/60">
-                  <div className="flex flex-wrap gap-2">
+                <div className="space-y-4 sm:space-y-6 pt-3 sm:pt-4 border-t border-editorial-border/60">
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2">
                     {proj.technologies.slice(0, 5).map((tech) => (
                       <span
                         key={tech}
-                        className="text-[11px] font-mono font-semibold uppercase tracking-wider px-2.5 py-1 bg-editorial-card border border-editorial-border text-editorial-text"
+                        className="text-[10px] xs:text-[11px] font-mono font-semibold uppercase tracking-wider px-2 sm:px-2.5 py-1 bg-editorial-card border border-editorial-border text-editorial-text"
                       >
                         {tech}
                       </span>
@@ -233,7 +233,7 @@ export default function SelectedProjects() {
 
                   <button
                     onClick={() => setSelectedProject(proj)}
-                    className="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-editorial-text hover:text-editorial-accent transition-colors group/btn"
+                    className="w-full sm:w-auto inline-flex items-center justify-center sm:justify-start gap-2 text-xs font-bold tracking-widest uppercase text-editorial-text hover:text-editorial-accent transition-colors group/btn min-h-[44px] py-2.5"
                   >
                     <span>VIEW PROJECT DETAILS</span>
                     <ArrowUpRight className="w-4 h-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />

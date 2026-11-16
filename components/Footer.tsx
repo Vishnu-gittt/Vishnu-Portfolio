@@ -8,9 +8,9 @@ export default function Footer() {
   };
 
   return (
-    <footer className="py-12 px-6 md:px-12 bg-editorial-dark text-editorial-bg border-t border-neutral-800 font-sans">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-        <div className="flex items-center gap-3">
+    <footer className="py-8 sm:py-12 px-4 xs:px-6 md:px-12 bg-editorial-dark text-editorial-bg border-t border-neutral-800 font-sans">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-5 sm:gap-6">
+        <div className="flex items-center gap-2.5 sm:gap-3">
           <div className="w-8 h-8 bg-editorial-bg text-editorial-dark flex items-center justify-center font-bold text-xs tracking-tighter shrink-0">
             <svg
               viewBox="0 0 32 32"
@@ -33,24 +33,24 @@ export default function Footer() {
               />
             </svg>
           </div>
-          <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3">
-            <span className="font-display font-extrabold tracking-tight text-base uppercase text-white">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-0.5 sm:gap-3 text-center sm:text-left">
+            <span className="font-display font-extrabold tracking-tight text-sm sm:text-base uppercase text-white">
               VISHNU VARTHAN N
             </span>
             <span className="hidden sm:inline text-neutral-600">/</span>
-            <span className="text-xs font-mono tracking-widest text-neutral-400 uppercase">
+            <span className="text-[10px] sm:text-xs font-mono tracking-widest text-neutral-400 uppercase">
               DATA SCIENCE × AI
             </span>
           </div>
         </div>
 
-        <div className="text-xs font-mono text-neutral-500 uppercase tracking-widest text-center">
+        <div className="text-[10px] sm:text-xs font-mono text-neutral-500 uppercase tracking-widest text-center">
           © 2026 VISHNU VARTHAN N. ALL RIGHTS RESERVED.
         </div>
 
         <button
           onClick={scrollToTop}
-          className="inline-flex items-center gap-2 text-xs font-mono text-neutral-400 hover:text-white uppercase tracking-widest transition-colors"
+          className="inline-flex items-center gap-2 text-[11px] sm:text-xs font-mono text-neutral-400 hover:text-white uppercase tracking-widest transition-colors min-h-[44px] py-2 px-3"
           aria-label="Scroll back to top"
         >
           <span>BACK TO TOP</span>

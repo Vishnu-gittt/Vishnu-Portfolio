@@ -19,11 +19,33 @@ export default function Header({ onOpenResume }: { onOpenResume: () => void }) {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 40);
+      setScrolled(window.scrollY > 30);
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Lock background scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      const originalOverflow = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.body.style.overflow = originalOverflow;
+      };
+    }
+  }, [mobileMenuOpen]);
+
+  // Handle Escape key to close mobile menu
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && mobileMenuOpen) {
+        setMobileMenuOpen(false);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [mobileMenuOpen]);
 
   const handleNavClick = (href: string) => {
     setMobileMenuOpen(false);
@@ -31,34 +53,38 @@ export default function Header({ onOpenResume }: { onOpenResume: () => void }) {
       onOpenResume();
       return;
     }
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    // Small timeout to allow mobile menu unmount and scroll-lock release
+    setTimeout(() => {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 50);
   };
 
   return (
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? "bg-[#F7F5F0]/90 backdrop-blur-md border-b border-editorial-border py-4"
-            : "bg-transparent py-6"
+          scrolled || mobileMenuOpen
+            ? "bg-[#F7F5F0]/95 backdrop-blur-md border-b border-editorial-border py-3 sm:py-4 shadow-sm"
+            : "bg-transparent py-4 sm:py-6"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 xs:px-6 md:px-8 xl:px-12 flex items-center justify-between">
           {/* Stylish Monogram V Logo + Name */}
           <a
             href="#"
-            className="flex items-center gap-3 group font-semibold text-xs md:text-sm tracking-widest text-editorial-text uppercase"
+            className="flex items-center gap-2.5 sm:gap-3 group font-semibold text-xs md:text-sm tracking-widest text-editorial-text uppercase shrink-0"
+            aria-label="Vishnu Varthan N - Home"
           >
             {/* Custom Editorial 'V' Monogram Emblem */}
-            <div className="w-8 h-8 md:w-9 md:h-9 bg-editorial-text text-editorial-bg flex items-center justify-center group-hover:bg-editorial-accent transition-all duration-300 shadow-sm shrink-0">
+            <div className="w-8 h-8 sm:w-9 sm:h-9 bg-editorial-text text-editorial-bg flex items-center justify-center group-hover:bg-editorial-accent transition-all duration-300 shadow-sm shrink-0">
               <svg
                 viewBox="0 0 32 32"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className="w-5 h-5 text-editorial-bg stroke-current"
+                className="w-4 h-4 sm:w-5 sm:h-5 text-editorial-bg stroke-current"
               >
                 <path
                   d="M6 8L16 25L26 8"
@@ -76,19 +102,19 @@ export default function Header({ onOpenResume }: { onOpenResume: () => void }) {
               </svg>
             </div>
 
-            <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-              <span className="font-extrabold tracking-wider group-hover:text-editorial-accent transition-colors">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-0.5 sm:gap-2">
+              <span className="font-extrabold tracking-wider group-hover:text-editorial-accent transition-colors text-xs sm:text-sm whitespace-nowrap">
                 VISHNU VARTHAN N
               </span>
               <span className="text-editorial-muted hidden sm:inline">/</span>
-              <span className="text-editorial-muted text-[10px] md:text-xs tracking-wider hidden sm:inline">
+              <span className="text-editorial-muted text-[10px] md:text-xs tracking-wider hidden sm:inline whitespace-nowrap">
                 DATA SCIENCE & AI
               </span>
             </div>
           </a>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-5 xl:space-x-8" aria-label="Desktop Navigation">
             {navItems.map((item) => (
               <button
                 key={item.label}
@@ -100,7 +126,7 @@ export default function Header({ onOpenResume }: { onOpenResume: () => void }) {
             ))}
           </nav>
 
-          {/* Connect Action Button */}
+          {/* Connect Action Button (Desktop/Tablet) */}
           <div className="hidden sm:flex items-center gap-4">
             <button
               onClick={() => handleNavClick("#contact")}
@@ -111,11 +137,13 @@ export default function Header({ onOpenResume }: { onOpenResume: () => void }) {
             </button>
           </div>
 
-          {/* Mobile Hamburger Toggle */}
+          {/* Mobile Hamburger Toggle (44x44px minimum touch target) */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 text-editorial-text hover:text-editorial-accent transition-colors focus:outline-none"
-            aria-label="Toggle navigation menu"
+            className="lg:hidden w-11 h-11 flex items-center justify-center text-editorial-text hover:text-editorial-accent transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-editorial-accent"
+            aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-navigation-menu"
           >
             {mobileMenuOpen ? (
               <X className="w-6 h-6" />
@@ -130,36 +158,43 @@ export default function Header({ onOpenResume }: { onOpenResume: () => void }) {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
+            id="mobile-navigation-menu"
+            initial={{ opacity: 0, y: -15 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.25 }}
-            className="fixed inset-0 top-[72px] z-40 bg-editorial-bg border-b border-editorial-border px-8 py-10 flex flex-col justify-between lg:hidden"
+            exit={{ opacity: 0, y: -15 }}
+            transition={{ duration: 0.22, ease: "easeOut" }}
+            className="fixed inset-x-0 bottom-0 top-[56px] xs:top-[64px] sm:top-[72px] z-40 bg-editorial-bg/95 backdrop-blur-xl border-b border-editorial-border px-6 py-6 flex flex-col justify-between overflow-y-auto lg:hidden"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Site Navigation"
           >
-            <div className="flex flex-col space-y-6">
+            <nav className="flex flex-col space-y-2 pt-2">
               {navItems.map((item, index) => (
                 <motion.button
                   key={item.label}
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.05 }}
+                  transition={{ delay: index * 0.04 }}
                   onClick={() => handleNavClick(item.href)}
-                  className="text-left text-2xl font-display font-bold tracking-tight text-editorial-text hover:text-editorial-accent transition-colors uppercase border-b border-editorial-border/40 pb-4"
+                  className="w-full text-left py-3.5 text-xl xs:text-2xl font-display font-bold tracking-tight text-editorial-text hover:text-editorial-accent active:text-editorial-accent transition-colors uppercase border-b border-editorial-border/40 flex items-center justify-between"
                 >
-                  {item.label}
+                  <span>{item.label}</span>
+                  <span className="font-mono text-xs text-editorial-accent font-normal">
+                    0{index + 1}
+                  </span>
                 </motion.button>
               ))}
-            </div>
+            </nav>
 
-            <div className="pt-8">
+            <div className="pt-6 pb-2">
               <button
                 onClick={() => handleNavClick("#contact")}
-                className="w-full flex items-center justify-center gap-2 text-xs font-bold tracking-widest uppercase bg-editorial-text text-editorial-bg py-4 hover:bg-editorial-accent transition-colors"
+                className="w-full min-h-[48px] flex items-center justify-center gap-2 text-xs font-bold tracking-widest uppercase bg-editorial-text text-editorial-bg py-4 hover:bg-editorial-accent active:bg-editorial-accent transition-colors shadow-sm"
               >
                 <span>LET'S CONNECT</span>
                 <ArrowUpRight className="w-4 h-4" />
               </button>
-              <p className="text-center text-xs text-editorial-muted mt-6">
+              <p className="text-center text-[11px] font-mono tracking-wider text-editorial-muted mt-5 uppercase">
                 © 2026 VISHNU VARTHAN N — DATA SCIENCE & AI
               </p>
             </div>

@@ -17,7 +17,7 @@ export default function Home() {
   const [resumeModalOpen, setResumeModalOpen] = useState(false);
 
   return (
-    <main className="min-h-screen bg-editorial-bg text-editorial-text font-sans relative selection:bg-editorial-dark selection:text-editorial-bg">
+    <main className="min-h-screen bg-editorial-bg text-editorial-text font-sans relative selection:bg-editorial-dark selection:text-editorial-bg w-full max-w-full overflow-x-hidden">
       {/* Top Fixed Header Navigation */}
       <Header onOpenResume={() => setResumeModalOpen(true)} />
 

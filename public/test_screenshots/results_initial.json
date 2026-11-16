@@ -1,0 +1,181 @@
+{
+  "small_mobile": {
+    "device": "Small mobile (320px)",
+    "viewport": "320x640",
+    "overflow": {
+      "scrollWidth": 320,
+      "innerWidth": 320,
+      "hasOverflow": false,
+      "overflowingElements": []
+    },
+    "navigation": {
+      "buttonFound": true,
+      "visible": true,
+      "hasMenuLinks": true,
+      "bodyOverflow": "hidden auto"
+    },
+    "resume": {
+      "viewBtnFound": true,
+      "viewHref": "/Vishnu%20Varthan%20N%20-%20Resume.pdf",
+      "downloadBtnFound": true,
+      "downloadAttr": "Vishnu Varthan N - Resume.pdf",
+      "downloadHref": "/Vishnu%20Varthan%20N%20-%20Resume.pdf"
+    },
+    "screenshots": {
+      "hero": "/Users/vishnu/Downloads/Portfolio/public/test_screenshots/small_mobile_hero.png",
+      "full": "/Users/vishnu/Downloads/Portfolio/public/test_screenshots/small_mobile_full.png"
+    }
+  },
+  "iphone_se": {
+    "device": "iPhone SE (375px)",
+    "viewport": "375x667",
+    "overflow": {
+      "scrollWidth": 375,
+      "innerWidth": 375,
+      "hasOverflow": false,
+      "overflowingElements": []
+    },
+    "navigation": {
+      "buttonFound": true,
+      "visible": true,
+      "hasMenuLinks": true,
+      "bodyOverflow": "hidden auto"
+    },
+    "resume": {
+      "viewBtnFound": true,
+      "viewHref": "/Vishnu%20Varthan%20N%20-%20Resume.pdf",
+      "downloadBtnFound": true,
+      "downloadAttr": "Vishnu Varthan N - Resume.pdf",
+      "downloadHref": "/Vishnu%20Varthan%20N%20-%20Resume.pdf"
+    },
+    "screenshots": {
+      "hero": "/Users/vishnu/Downloads/Portfolio/public/test_screenshots/iphone_se_hero.png",
+      "full": "/Users/vishnu/Downloads/Portfolio/public/test_screenshots/iphone_se_full.png"
+    }
+  },
+  "standard_mobile": {
+    "device": "Standard mobile (390px)",
+    "viewport": "390x844",
+    "overflow": {
+      "scrollWidth": 390,
+      "innerWidth": 390,
+      "hasOverflow": false,
+      "overflowingElements": []
+    },
+    "navigation": {
+      "buttonFound": true,
+      "visible": true,
+      "hasMenuLinks": true,
+      "bodyOverflow": "hidden auto"
+    },
+    "resume": {
+      "viewBtnFound": true,
+      "viewHref": "/Vishnu%20Varthan%20N%20-%20Resume.pdf",
+      "downloadBtnFound": true,
+      "downloadAttr": "Vishnu Varthan N - Resume.pdf",
+      "downloadHref": "/Vishnu%20Varthan%20N%20-%20Resume.pdf"
+    },
+    "screenshots": {
+      "hero": "/Users/vishnu/Downloads/Portfolio/public/test_screenshots/standard_mobile_hero.png",
+      "full": "/Users/vishnu/Downloads/Portfolio/public/test_screenshots/standard_mobile_full.png"
+    }
+  },
+  "large_mobile": {
+    "device": "Large mobile (430px)",
+    "viewport": "430x932",
+    "overflow": {
+      "scrollWidth": 430,
+      "innerWidth": 430,
+      "hasOverflow": false,
+      "overflowingElements": []
+    },
+    "navigation": {
+      "buttonFound": true,
+      "visible": true,
+      "hasMenuLinks": true,
+      "bodyOverflow": "hidden auto"
+    },
+    "resume": {
+      "viewBtnFound": true,
+      "viewHref": "/Vishnu%20Varthan%20N%20-%20Resume.pdf",
+      "downloadBtnFound": true,
+      "downloadAttr": "Vishnu Varthan N - Resume.pdf",
+      "downloadHref": "/Vishnu%20Varthan%20N%20-%20Resume.pdf"
+    },
+    "screenshots": {
+      "hero": "/Users/vishnu/Downloads/Portfolio/public/test_screenshots/large_mobile_hero.png",
+      "full": "/Users/vishnu/Downloads/Portfolio/public/test_screenshots/large_mobile_full.png"
+    }
+  },
+  "tablet": {
+    "device": "Tablet (768px)",
+    "viewport": "768x1024",
+    "overflow": {
+      "scrollWidth": 768,
+      "innerWidth": 768,
+      "hasOverflow": false,
+      "overflowingElements": []
+    },
+    "navigation": {
+      "buttonFound": true,
+      "visible": true,
+      "hasMenuLinks": true,
+      "bodyOverflow": "hidden auto"
+    },
+    "resume": {
+      "viewBtnFound": true,
+      "viewHref": "/Vishnu%20Varthan%20N%20-%20Resume.pdf",
+      "downloadBtnFound": true,
+      "downloadAttr": "Vishnu Varthan N - Resume.pdf",
+      "downloadHref": "/Vishnu%20Varthan%20N%20-%20Resume.pdf"
+    },
+    "screenshots": {
+      "hero": "/Users/vishnu/Downloads/Portfolio/public/test_screenshots/tablet_hero.png",
+      "full": "/Users/vishnu/Downloads/Portfolio/public/test_screenshots/tablet_full.png"
+    }
+  },
+  "laptop": {
+    "device": "Laptop (1024px)",
+    "viewport": "1024x768",
+    "overflow": {
+      "scrollWidth": 1024,
+      "innerWidth": 1024,
+      "hasOverflow": false,
+      "overflowingElements": []
+    },
+    "navigation": {},
+    "resume": {
+      "viewBtnFound": true,
+      "viewHref": "/Vishnu%20Varthan%20N%20-%20Resume.pdf",
+      "downloadBtnFound": true,
+      "downloadAttr": "Vishnu Varthan N - Resume.pdf",
+      "downloadHref": "/Vishnu%20Varthan%20N%20-%20Resume.pdf"
+    },
+    "screenshots": {
+      "hero": "/Users/vishnu/Downloads/Portfolio/public/test_screenshots/laptop_hero.png",
+      "full": "/Users/vishnu/Downloads/Portfolio/public/test_screenshots/laptop_full.png"
+    }
+  },
+  "desktop": {
+    "device": "Desktop (1440px)",
+    "viewport": "1440x900",
+    "overflow": {
+      "scrollWidth": 1440,
+      "innerWidth": 1440,
+      "hasOverflow": false,
+      "overflowingElements": []
+    },
+    "navigation": {},
+    "resume": {
+      "viewBtnFound": true,
+      "viewHref": "/Vishnu%20Varthan%20N%20-%20Resume.pdf",
+      "downloadBtnFound": true,
+      "downloadAttr": "Vishnu Varthan N - Resume.pdf",
+      "downloadHref": "/Vishnu%20Varthan%20N%20-%20Resume.pdf"
+    },
+    "screenshots": {
+      "hero": "/Users/vishnu/Downloads/Portfolio/public/test_screenshots/desktop_hero.png",
+      "full": "/Users/vishnu/Downloads/Portfolio/public/test_screenshots/desktop_full.png"
+    }
+  }
+}
