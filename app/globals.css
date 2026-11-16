@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    background-color: #F7F5F0;
+    color: #121212;
+  }
+  
+  body {
+    background-color: #F7F5F0;
+    color: #121212;
+    overflow-x: hidden;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  ::selection {
+    background-color: #121212;
+    color: #F7F5F0;
+  }
+}
+
+/* Custom editorial scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F7F5F0;
+}
+::-webkit-scrollbar-thumb {
+  background: #DCD8CF;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8C3F2B;
+}
+
+/* Noise overlay texture for tactile editorial paper feel */
+.bg-noise {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Subtle image filter to give photograph an ultra-clean high fashion tone */
+.editorial-photo {
+  filter: contrast(102%) brightness(99%) saturate(95%);
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.editorial-photo:hover {
+  transform: scale(1.02);
+}
